@@ -1,4 +1,7 @@
-= simple_form_for :choice do |f|
-  = f.input :rock, as: :string
-  = f.input :paper, as: :string
-  = f.input :scissors, as: :string
+.choices
+  .choice_wrapper
+    %img{alt: "Paper", src: image_path("Paper.svg"), width: "25"}
+  .choice_wrapper
+    %img{alt: "Rock", src: image_path("Rock.svg"), width: "25"}
+  .choice_wrapper
+    %img{alt: "Scissors", src: image_path("Scissors.svg"), width: "25"}
