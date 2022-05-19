@@ -1,6 +1,15 @@
+.text-center.mt-4
+  .h3
+    = @result[:title]
+  .p
+    = @result[:body]
 .d-flex.justify-content-center.mt-5
   - if params[:choice]
-    ok
+    .d-flex.flex-column
+      .mx-auto
+        = generate_choice(@result[:choice]) unless @result[:title] == 'It\'s a Draw!'
+      .mt-4
+        = link_to 'Play Again?', play_choose_path, class: 'btn btn-success'
   - else
     .mx-2
       = generate_choice('Paper')
