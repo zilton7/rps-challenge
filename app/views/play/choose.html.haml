@@ -1,0 +1,19 @@
+.text-center.mt-4
+  .h3
+    = @result[:title]
+  .p
+    = @result[:body]
+.d-flex.justify-content-center.mt-5
+  - if params[:choice]
+    .d-flex.flex-column
+      .mx-auto
+        = generate_choice(@result)
+      .mt-4
+        = link_to 'Play Again?', play_choose_path, class: 'btn btn-success'
+  - else
+    .mx-2
+      = generate_choice(choice: 'Paper')
+    .mx-2
+      = generate_choice(choice: 'Rock')
+    .mx-2
+      = generate_choice(choice: 'Scissors')
